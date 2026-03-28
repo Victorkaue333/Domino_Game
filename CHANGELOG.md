@@ -8,14 +8,18 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 ## [1.2.1] - 2026-03-28
 
 ### Adicionado
-- 📸 **Galeria de capturas de tela** no README
-  - 4 screenshots mostrando menu, jogo e interface
-  - Layout em tabela 2x2 para visualização organizada
-  - Legendas descritivas para cada imagem
+- 📸 **Galeria interativa de capturas de tela** no README
+  - Sistema de carrossel navegável com elementos `<details>` expansíveis
+  - Cada screenshot pode ser expandido/recolhido individualmente
+  - 4 screenshots em alta resolução (800px de largura)
+  - Grid de miniaturas (200px) para visualização rápida
+  - Legendas descritivas e ícones para cada seção
 - 🖼️ Pasta `imgs/` com screenshots do projeto
+- 🎨 Layout centralizado e profissional
 
 ### Melhorado
-- README mais visual e atrativo
+- README muito mais visual e interativo
+- Experiência de navegação tipo "carrossel" sem JavaScript
 - Melhor demonstração das funcionalidades do jogo
 
 ## [1.2.0] - 2026-03-28
