@@ -59,7 +59,9 @@ No que diz respeito aos controles, o jogo é projetado para ser jogado principal
 - **N**: Nova rodada/partida
 - **ESC**: Voltar ao menu
 
-## ⚙️ Requisitos
+## ⚙️ Requisitos:
+
+Após a instalação das dependências, é necessário ter o Python 3.10 ou superior para executar o jogo. As dependências estão listadas no arquivo `requirements.txt` e podem ser instaladas usando pip.
 
 - 🐍 **Python 3.10+**
 - 📦 Dependências listadas em `requirements.txt`:
