@@ -18,7 +18,7 @@ Jogo de dominó completo com interface gráfica desenvolvido em Python com Pygam
 - 🧪 **Testes unitários** incluídos
 - 📖 **Código bem documentado** com docstrings completas
 
-## 🎯 Características do Jogo
+## 🎯 Características do Jogo:
 
 ### Modos de Jogo:
 
