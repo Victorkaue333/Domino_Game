@@ -148,17 +148,6 @@ Domino_Game/
 └── .gitignore             # Arquivos ignorados pelo Git
 ```
 
-## ⚙️ Configurações:
-
-Você pode personalizar diversos aspectos do jogo editando o arquivo `config.py`:
-
-- Número de jogadores
-- Pontuação alvo
-- Cores da interface
-- Velocidade dos bots
-- Configurações de som
-- Tamanhos de janela e fontes
-- E muito mais!
 
 ## 🎨 Capturas de Tela:
 
