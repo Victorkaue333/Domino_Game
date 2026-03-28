@@ -8,6 +8,8 @@ Jogo de dominó completo com interface gráfica desenvolvido em Python com Pygam
 
 ## ✨ Características:
 
+Desenvolvido com foco em qualidade, jogabilidade e experiência do usuário, o jogo inclui:
+
 - 🎮 **Menu principal interativo** com navegação intuitiva
 - 🤖 **Inteligência artificial** para oponentes bots
 - 🎵 **Sistema de sons** proceduralmente gerados
