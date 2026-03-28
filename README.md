@@ -72,6 +72,7 @@ domino-game-python
 ├── assets/
 │   └── textures
 └── README.md
+
 🧠 Funcionalidades
 Interface gráfica com mesa de dominó
 Peças renderizadas dinamicamente
