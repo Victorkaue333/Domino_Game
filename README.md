@@ -1,16 +1,16 @@
-# Domino Game (Python)
+# 🎲 Domino Game (Python)
 
 Projeto em desenvolvimento de um jogo de domino com interface grafica em Python.
 
-## Status do projeto
+## 📌 Status do projeto
 
 Estrutura inicial criada, mas os arquivos principais ainda estao sem implementacao:
 
-- `main.py`
-- `domino.py`
-- `board.py`
+- 🧩 `main.py`
+- 🧩 `domino.py`
+- 🧩 `board.py`
 
-## Objetivo
+## 🎯 Objetivo
 
 Construir um jogo de domino completo, evoluindo em etapas:
 
@@ -20,13 +20,13 @@ Construir um jogo de domino completo, evoluindo em etapas:
 4. Regras oficiais de jogada.
 5. IA adversaria e modos multiplayer.
 
-## Requisitos
+## ⚙️ Requisitos
 
-- Python 3.10+
-- `pip`
-- `pygame` (quando a implementacao grafica for iniciada)
+- 🐍 Python 3.10+
+- 📦 `pip`
+- 🎮 `pygame` (quando a implementacao grafica for iniciada)
 
-## Como executar (estrutura atual)
+## 🚀 Como executar (estrutura atual)
 
 ```bash
 git clone https://github.com/<seu-usuario>/Domino_Game.git
@@ -36,7 +36,7 @@ python main.py
 
 No estado atual, o projeto funciona como base de estrutura e documentacao.
 
-## Estrutura do repositorio
+## 🗂️ Estrutura do repositorio
 
 ```text
 Domino_Game/
@@ -46,12 +46,12 @@ Domino_Game/
 `-- README.md
 ```
 
-## Proximos passos recomendados
+## ✅ Proximos passos recomendados
 
 1. Implementar a modelagem das pecas de domino em `domino.py`.
 2. Criar a mesa e validacoes basicas em `board.py`.
 3. Orquestrar o loop principal e eventos em `main.py`.
 
-## Licenca
+## 📄 Licenca
 
 Licenca ainda nao definida neste repositorio.
