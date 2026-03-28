@@ -95,16 +95,7 @@ desenvolvimento de jogos em Python
 programação orientada a objetos
 manipulação de eventos gráficos
 design de jogos 2D
-🤝 Contribuições
 
-Contribuições são bem-vindas.
-
-Para contribuir:
-
-Faça um fork do projeto
-Crie uma branch
-Faça suas alterações
-Abra um Pull Request
 📜 Licença
 
 Este projeto está sob a licença MIT.
