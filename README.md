@@ -126,6 +126,12 @@ Domino_Game/
 ├── docs/                   # Documentação
 │   └── Implementado.md    # Documentação de implementação
 │
+├── imgs/                   # Screenshots e imagens
+│   ├── 1.png              # Menu principal
+│   ├── 2.png              # Jogo em andamento
+│   ├── 3.png              # Peças realistas
+│   └── 4.png              # Interface completa
+│
 ├── run.py                  # Script principal para executar o jogo
 ├── requirements.txt        # Dependências do projeto
 ├── README.md              # Este arquivo
@@ -148,7 +154,30 @@ Você pode personalizar diversos aspectos do jogo editando o arquivo `config.py`
 
 ## 🎨 Capturas de Tela:
 
-*(Em desenvolvimento: adicionar screenshots do menu e jogo)*
+<table>
+  <tr>
+    <td width="50%">
+      <img src="imgs/1.png" alt="Menu Principal" />
+      <p align="center"><b>Menu Principal</b></p>
+    </td>
+    <td width="50%">
+      <img src="imgs/2.png" alt="Jogo em Andamento" />
+      <p align="center"><b>Jogo em Andamento</b></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="imgs/3.png" alt="Peças com Pintas Realistas" />
+      <p align="center"><b>Peças com Pintas Realistas</b></p>
+    </td>
+    <td width="50%">
+      <img src="imgs/4.png" alt="Interface Completa" />
+      <p align="center"><b>Interface Completa</b></p>
+    </td>
+  </tr>
+</table>
+
+> 💡 **Destaques visuais**: Peças de dominó autênticas com pintas desenhadas, cores realistas e interface intuitiva.
 
 ## 🧪 Testes:
 

@@ -5,6 +5,19 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.2.1] - 2026-03-28
+
+### Adicionado
+- 📸 **Galeria de capturas de tela** no README
+  - 4 screenshots mostrando menu, jogo e interface
+  - Layout em tabela 2x2 para visualização organizada
+  - Legendas descritivas para cada imagem
+- 🖼️ Pasta `imgs/` com screenshots do projeto
+
+### Melhorado
+- README mais visual e atrativo
+- Melhor demonstração das funcionalidades do jogo
+
 ## [1.2.0] - 2026-03-28
 
 ### Alterado
