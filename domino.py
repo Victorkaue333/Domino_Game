@@ -1,50 +1,41 @@
+from dataclasses import dataclass
 import random
 
-import pygame
+
+MAX_PIP_VALUE = 6
+HAND_TILES = 6
 
 
-TILE_WIDTH = 60
-TILE_HEIGHT = 120
-
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-
-
+@dataclass(frozen=True, slots=True)
 class DominoTile:
-    def __init__(self, left: int, right: int, x: int, y: int) -> None:
-        self.left = left
-        self.right = right
-        self.rect = pygame.Rect(x, y, TILE_WIDTH, TILE_HEIGHT)
-        self.dragging = False
+    left: int
+    right: int
 
-    def rotate(self) -> None:
-        self.left, self.right = self.right, self.left
+    def is_double(self) -> bool:
+        return self.left == self.right
 
-    def draw(self, surface: pygame.Surface, font: pygame.font.Font) -> None:
-        pygame.draw.rect(surface, WHITE, self.rect)
-        pygame.draw.rect(surface, BLACK, self.rect, 2)
+    def pip_sum(self) -> int:
+        return self.left + self.right
 
-        top_text = font.render(str(self.left), True, BLACK)
-        bottom_text = font.render(str(self.right), True, BLACK)
+    def matches(self, pip: int) -> bool:
+        return self.left == pip or self.right == pip
 
-        surface.blit(top_text, (self.rect.x + 22, self.rect.y + 20))
-        surface.blit(bottom_text, (self.rect.x + 22, self.rect.y + 70))
-
-        pygame.draw.line(
-            surface,
-            BLACK,
-            (self.rect.x, self.rect.y + TILE_HEIGHT // 2),
-            (self.rect.x + TILE_WIDTH, self.rect.y + TILE_HEIGHT // 2),
-            2,
-        )
+    def flipped(self) -> "DominoTile":
+        return DominoTile(self.right, self.left)
 
 
-def generate_domino_set(max_value: int = 6) -> list[tuple[int, int]]:
-    tiles: list[tuple[int, int]] = []
+def generate_domino_set(max_value: int = MAX_PIP_VALUE) -> list[DominoTile]:
+    tiles: list[DominoTile] = []
 
     for left in range(max_value + 1):
         for right in range(left, max_value + 1):
-            tiles.append((left, right))
+            tiles.append(DominoTile(left, right))
 
     random.shuffle(tiles)
     return tiles
+
+
+def tile_rank(tile: DominoTile) -> tuple[int, int, int]:
+    highest_side = max(tile.left, tile.right)
+    lowest_side = min(tile.left, tile.right)
+    return (tile.pip_sum(), highest_side, lowest_side)
