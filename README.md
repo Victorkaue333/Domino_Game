@@ -1,6 +1,6 @@
 # 🎲 Domino Game (Python)
 
-Jogo de dominó completo com interface gráfica desenvolvido em Python com Pygame. O jogo implementa as regras oficiais do dominó e inclui modo multiplayer local com bots inteligentes.
+Jogo de dominó completo com interface gráfica desenvolvido em Python com Pygame. O jogo implementa as regras oficiais do dominó e inclui modo multiplayer local com bots inteligentes. Além disso, foi criado por causa de ser um dos jogos favoritos do autor, e para praticar habilidades de desenvolvimento de jogos, inteligência artificial e design de interfaces.
 
 ![Status](https://img.shields.io/badge/status-active-success.svg)
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
