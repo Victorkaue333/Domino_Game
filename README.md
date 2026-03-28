@@ -184,16 +184,7 @@ A estrutura modular facilita a adição de novas funcionalidades:
 4. **Novos testes**: Crie arquivos em `tests/`
 5. **Nova documentação**: Adicione em `docs/`
 
-## 📝 Melhorias Futuras
 
-- [ ] Animações suaves ao jogar peças
-- [ ] Diferentes níveis de dificuldade para bots
-- [ ] Sistema de estatísticas de partidas
-- [ ] Save/Load de partidas
-- [ ] Multiplayer online
-- [ ] Suporte a diferentes conjuntos de peças (dominó 9, 12)
-- [ ] Modo torneio
-- [ ] Temas visuais customizáveis
 
 ## 📄 Licença:
 
