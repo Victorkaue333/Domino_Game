@@ -22,6 +22,8 @@ Desenvolvido com foco em qualidade, jogabilidade e experiência do usuário, o j
 
 ## 🎯 Características do Jogo:
 
+No que se refere às regras e mecânicas do jogo, ele segue as diretrizes oficiais do dominó, incluindo:
+
 ### Modos de Jogo:
 
 - **Modo Resgate**: Compra peças do cemitério até conseguir jogar
