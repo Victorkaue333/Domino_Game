@@ -46,11 +46,6 @@ Domino_Game/
 `-- README.md
 ```
 
-## ✅ Proximos passos recomendados
-
-1. Implementar a modelagem das pecas de domino em `domino.py`.
-2. Criar a mesa e validacoes basicas em `board.py`.
-3. Orquestrar o loop principal e eventos em `main.py`.
 
 ## 📄 Licenca
 
