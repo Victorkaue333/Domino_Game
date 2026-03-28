@@ -51,10 +51,14 @@ No que diz respeito aos controles, o jogo é projetado para ser jogado principal
 
 ### Menu:
 
+Na navegação pelos menus, os controles são os seguintes:
+
 - **Mouse**: Navegar e clicar nos botões
 - **ESC**: Voltar/Sair
 
 ### Jogo:
+
+Os controles durante o jogo são os seguintes:
 
 - **Clique Esquerdo**: Jogar peça na ponta ESQUERDA
 - **Clique Direito**: Jogar peça na ponta DIREITA
