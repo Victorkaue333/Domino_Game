@@ -22,12 +22,14 @@ ROUND_END_DELAY_MS = 2500
 BOT_TURN_DELAY_MS = 700
 
 TABLE_Y = 265
-HAND_Y = 535
+HAND_Y = 470  # Ajustado para dar mais espaço visual
 
 BG_GREEN = (34, 110, 42)
 TABLE_GREEN = (25, 82, 32)
 WHITE = (245, 245, 245)
+TILE_COLOR = (240, 235, 220)  # Cor creme para as peças
 BLACK = (15, 15, 15)
+DARK_GRAY = (60, 60, 60)
 YELLOW = (255, 220, 90)
 RED = (215, 75, 70)
 BLUE = (85, 145, 230)
@@ -530,6 +532,58 @@ class DominoBoard:
             return 4 if tile.is_double() else 3
         return 2 if tile.is_double() else 1
 
+    def _draw_pips(self, surface: pygame.Surface, value: int, rect: pygame.Rect, 
+                    is_vertical: bool = False) -> None:
+        """Desenha as pintas de uma peça de dominó.
+        
+        Args:
+            surface: Superfície do Pygame onde desenhar.
+            value: Valor (0-6) das pintas a desenhar.
+            rect: Retângulo da área onde desenhar as pintas.
+            is_vertical: Se True, desenha para peça vertical; se False, horizontal.
+        """
+        if value == 0:
+            return
+        
+        # Tamanho das pintas baseado no tamanho da área
+        if is_vertical:
+            pip_radius = min(rect.width // 8, rect.height // 12)
+        else:
+            pip_radius = min(rect.width // 8, rect.height // 6)
+        
+        pip_radius = max(pip_radius, 2)  # Mínimo de 2 pixels
+        
+        # Coordenadas relativas para os padrões de pintas
+        cx, cy = rect.centerx, rect.centery
+        
+        if is_vertical:
+            # Para peças verticais (na mão do jogador)
+            offset_x = rect.width // 4
+            offset_y = rect.height // 5
+        else:
+            # Para peças horizontais (na mesa)
+            offset_x = rect.width // 4
+            offset_y = rect.height // 4
+        
+        # Posições das pintas
+        positions = {
+            1: [(cx, cy)],
+            2: [(cx - offset_x, cy - offset_y), (cx + offset_x, cy + offset_y)],
+            3: [(cx - offset_x, cy - offset_y), (cx, cy), (cx + offset_x, cy + offset_y)],
+            4: [(cx - offset_x, cy - offset_y), (cx + offset_x, cy - offset_y),
+                (cx - offset_x, cy + offset_y), (cx + offset_x, cy + offset_y)],
+            5: [(cx - offset_x, cy - offset_y), (cx + offset_x, cy - offset_y),
+                (cx, cy),
+                (cx - offset_x, cy + offset_y), (cx + offset_x, cy + offset_y)],
+            6: [(cx - offset_x, cy - offset_y), (cx + offset_x, cy - offset_y),
+                (cx - offset_x, cy), (cx + offset_x, cy),
+                (cx - offset_x, cy + offset_y), (cx + offset_x, cy + offset_y)]
+        }
+        
+        if value in positions:
+            for x, y in positions[value]:
+                pygame.draw.circle(surface, BLACK, (int(x), int(y)), pip_radius)
+
     def draw(self, surface: pygame.Surface) -> None:
         surface.fill(BG_GREEN)
         pygame.draw.rect(surface, TABLE_GREEN, (0, 70, WINDOW_WIDTH, 360))
@@ -569,8 +623,8 @@ class DominoBoard:
             return
 
         tile_count = len(self.chain)
-        tile_w = 40
-        tile_h = 22
+        tile_w = 50  # Aumentado de 40 para 50
+        tile_h = 28  # Aumentado de 22 para 28
         gap = 2
         total_width = tile_count * tile_w + max(0, tile_count - 1) * gap
         start_x = (WINDOW_WIDTH - total_width) // 2
@@ -578,20 +632,25 @@ class DominoBoard:
         for index, tile in enumerate(self.chain):
             x = start_x + index * (tile_w + gap)
             rect = pygame.Rect(x, TABLE_Y, tile_w, tile_h)
-            pygame.draw.rect(surface, WHITE, rect)
+            
+            # Fundo creme da peça
+            pygame.draw.rect(surface, TILE_COLOR, rect)
+            # Borda preta
             pygame.draw.rect(surface, BLACK, rect, 2)
+            # Linha divisora no meio
             pygame.draw.line(
                 surface,
                 BLACK,
                 (rect.x + rect.width // 2, rect.y),
                 (rect.x + rect.width // 2, rect.y + rect.height),
-                1,
+                2,
             )
 
-            left_value = self.table_font.render(str(tile.left), True, BLACK)
-            right_value = self.table_font.render(str(tile.right), True, BLACK)
-            surface.blit(left_value, (rect.x + 8, rect.y + 2))
-            surface.blit(right_value, (rect.x + 24, rect.y + 2))
+            # Desenha as pintas ao invés de números
+            left_rect = pygame.Rect(rect.x, rect.y, rect.width // 2, rect.height)
+            right_rect = pygame.Rect(rect.x + rect.width // 2, rect.y, rect.width // 2, rect.height)
+            self._draw_pips(surface, tile.left, left_rect, is_vertical=False)
+            self._draw_pips(surface, tile.right, right_rect, is_vertical=False)
 
         ends_text = f"Pontas abertas: {self.left_end} | {self.right_end}"
         ends_render = self.text_font.render(ends_text, True, WHITE)
@@ -605,14 +664,17 @@ class DominoBoard:
         for index, tile in enumerate(player.hand):
             rect = self.human_hand_rects[index]
 
-            border_color = WHITE
-            border_width = 2
+            border_color = DARK_GRAY
+            border_width = 3
             if index in playable_map:
                 border_color = YELLOW
                 border_width = 4
 
-            pygame.draw.rect(surface, WHITE, rect)
+            # Fundo creme da peça
+            pygame.draw.rect(surface, TILE_COLOR, rect)
+            # Borda colorida
             pygame.draw.rect(surface, border_color, rect, border_width)
+            # Linha divisora no meio
             pygame.draw.line(
                 surface,
                 BLACK,
@@ -621,10 +683,11 @@ class DominoBoard:
                 2,
             )
 
-            top_text = self.text_font.render(str(tile.left), True, BLACK)
-            bottom_text = self.text_font.render(str(tile.right), True, BLACK)
-            surface.blit(top_text, (rect.x + rect.width // 2 - 6, rect.y + 16))
-            surface.blit(bottom_text, (rect.x + rect.width // 2 - 6, rect.y + 62))
+            # Desenha as pintas ao invés de números
+            top_rect = pygame.Rect(rect.x, rect.y, rect.width, rect.height // 2)
+            bottom_rect = pygame.Rect(rect.x, rect.y + rect.height // 2, rect.width, rect.height // 2)
+            self._draw_pips(surface, tile.left, top_rect, is_vertical=True)
+            self._draw_pips(surface, tile.right, bottom_rect, is_vertical=True)
 
     def _build_human_hand_rects(self) -> list[pygame.Rect]:
         hand_size = len(self.players[0].hand)

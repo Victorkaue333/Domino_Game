@@ -11,7 +11,8 @@ Jogo de dominó completo com interface gráfica desenvolvido em Python com Pygam
 - 🎮 **Menu principal interativo** com navegação intuitiva
 - 🤖 **Inteligência artificial** para oponentes bots
 - 🎵 **Sistema de sons** proceduralmente gerados
-- 🎨 **Interface gráfica** limpa e responsiva
+- 🎨 **Interface gráfica realista** com peças visuais (pintas desenhadas)
+- 🎲 **Peças de dominó autênticas** com pontos ao invés de números
 - 📊 **Sistema de pontuação** baseado nas regras oficiais
 - ⚙️ **Configurações personalizáveis** via arquivo de configuração
 - 🧪 **Testes unitários** incluídos

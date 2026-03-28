@@ -22,13 +22,15 @@ FPS = 60  # Frames por segundo
 
 # === Posições Y dos Elementos ===
 TABLE_Y = 265  # Posição Y da mesa (onde as peças jogadas aparecem)
-HAND_Y = 535  # Posição Y da mão do jogador humano
+HAND_Y = 470  # Posição Y da mão do jogador humano (ajustado para melhor visualização)
 
 # === Cores (RGB) ===
 BG_GREEN = (34, 110, 42)  # Verde do fundo
 TABLE_GREEN = (25, 82, 32)  # Verde da mesa
 WHITE = (245, 245, 245)
+TILE_COLOR = (240, 235, 220)  # Cor creme para as peças (mais realista)
 BLACK = (15, 15, 15)
+DARK_GRAY = (60, 60, 60)  # Cinza escuro para bordas
 YELLOW = (255, 220, 90)  # Cor de destaque
 RED = (215, 75, 70)  # Cor de erro
 BLUE = (85, 145, 230)  # Cor de informação
@@ -36,8 +38,8 @@ BLUE = (85, 145, 230)  # Cor de informação
 # === Configurações de Peças ===
 TILE_WIDTH = 62  # Largura das peças na mão
 TILE_HEIGHT = 98  # Altura das peças na mão
-TABLE_TILE_WIDTH = 40  # Largura das peças na mesa
-TABLE_TILE_HEIGHT = 22  # Altura das peças na mesa
+TABLE_TILE_WIDTH = 50  # Largura das peças na mesa (aumentado para melhor visualização)
+TABLE_TILE_HEIGHT = 28  # Altura das peças na mesa (aumentado para melhor visualização)
 TILE_MIN_SPACING = 18  # Espaçamento mínimo entre peças
 TILE_MAX_SPACING = 70  # Espaçamento máximo entre peças
 
