@@ -99,7 +99,9 @@ python -m unittest test_domino.py
 python -m unittest test_board.py
 ```
 
-## 🗂️ Estrutura do Projeto
+## 🗂️ Estrutura do Projeto:
+
+A estrutura do projeto é organizada para facilitar a manutenção e extensão futura:
 
 ```text
 Domino_Game/
