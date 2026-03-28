@@ -170,21 +170,14 @@ Todos os módulos possuem docstrings completas e seguem as melhores práticas de
 - [ ] Modo torneio
 - [ ] Temas visuais customizáveis
 
-## 📄 Licença
+## 📄 Licença:
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ## 👨‍💻 Autor
 
-**Victor Kaue**
+**Victor Kauê**
 
 - GitHub: [@Victorkaue333](https://github.com/Victorkaue333)
 
-## 🙏 Agradecimentos
-
-- Regras baseadas no manual da Table Games
-- Desenvolvido como projeto educacional e de entretenimento
-
 ---
-
-⭐ Se você gostou deste projeto, considere dar uma estrela no repositório!
