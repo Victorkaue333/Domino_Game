@@ -154,28 +154,68 @@ Você pode personalizar diversos aspectos do jogo editando o arquivo `config.py`
 
 ## 🎨 Capturas de Tela:
 
-<table>
+<div align="center">
+
+### 🎮 Galeria Interativa
+
+<!-- Slide 1 - Menu Principal -->
+<details open>
+<summary><b>📸 Menu Principal</b> (Clique para navegar)</summary>
+<br>
+<img src="imgs/1.png" alt="Menu Principal" width="800"/>
+<p><i>Interface inicial do jogo com opções de Jogar, Configurações, Regras e Sair</i></p>
+</details>
+
+<!-- Slide 2 - Configurações -->
+<details>
+<summary><b>⚙️ Tela de Configurações</b> (Clique para expandir)</summary>
+<br>
+<img src="imgs/2.png" alt="Configurações" width="800"/>
+<p><i>Visualização das configurações disponíveis no jogo</i></p>
+</details>
+
+<!-- Slide 3 - Regras do Jogo -->
+<details>
+<summary><b>📋 Regras do Jogo</b> (Clique para expandir)</summary>
+<br>
+<img src="imgs/3.png" alt="Regras" width="800"/>
+<p><i>Tela explicativa com todas as regras e controles do jogo</i></p>
+</details>
+
+<!-- Slide 4 - Jogo em Andamento -->
+<details>
+<summary><b>🎲 Jogo em Andamento</b> (Clique para expandir)</summary>
+<br>
+<img src="imgs/4.png" alt="Jogo em Andamento" width="800"/>
+<p><i>Interface completa mostrando peças com pintas realistas, mesa de jogo e controles</i></p>
+</details>
+
+---
+
+### ✨ Grid de Miniaturas
+
+<table align="center">
   <tr>
-    <td width="50%">
-      <img src="imgs/1.png" alt="Menu Principal" />
-      <p align="center"><b>Menu Principal</b></p>
+    <td align="center" width="25%">
+      <img src="imgs/1.png" alt="Menu" width="200"/><br>
+      <b>Menu Principal</b>
     </td>
-    <td width="50%">
-      <img src="imgs/2.png" alt="Jogo em Andamento" />
-      <p align="center"><b>Jogo em Andamento</b></p>
+    <td align="center" width="25%">
+      <img src="imgs/2.png" alt="Config" width="200"/><br>
+      <b>Configurações</b>
     </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <img src="imgs/3.png" alt="Peças com Pintas Realistas" />
-      <p align="center"><b>Peças com Pintas Realistas</b></p>
+    <td align="center" width="25%">
+      <img src="imgs/3.png" alt="Regras" width="200"/><br>
+      <b>Regras</b>
     </td>
-    <td width="50%">
-      <img src="imgs/4.png" alt="Interface Completa" />
-      <p align="center"><b>Interface Completa</b></p>
+    <td align="center" width="25%">
+      <img src="imgs/4.png" alt="Jogo" width="200"/><br>
+      <b>Gameplay</b>
     </td>
   </tr>
 </table>
+
+</div>
 
 > 💡 **Destaques visuais**: Peças de dominó autênticas com pintas desenhadas, cores realistas e interface intuitiva.
 
