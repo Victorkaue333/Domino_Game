@@ -1,105 +1,57 @@
-📦 Descrição do Repositório (GitHub)
+# Domino Game (Python)
 
-Domino Game (Python + Pygame)
+Projeto em desenvolvimento de um jogo de domino com interface grafica em Python.
 
-Um jogo de dominó com interface gráfica desenvolvido em Python, utilizando a biblioteca Pygame.
+## Status do projeto
 
-O projeto implementa uma mesa visual de dominó onde o jogador pode arrastar peças com o mouse, rotacioná-las e posicioná-las na mesa, simulando uma experiência real de jogo.
+Estrutura inicial criada, mas os arquivos principais ainda estao sem implementacao:
 
-Este projeto foi desenvolvido com foco em:
+- `main.py`
+- `domino.py`
+- `board.py`
 
-prática de programação orientada a objetos
-desenvolvimento de interfaces gráficas em Python
-lógica de jogos e manipulação de eventos
-uso da biblioteca Pygame para renderização 2D
+## Objetivo
 
-O objetivo é evoluir o projeto gradualmente até um dominó completo, com regras oficiais, IA adversária e multiplayer.
+Construir um jogo de domino completo, evoluindo em etapas:
 
-📝 README.md
-# 🎲 Domino Game (Python)
+1. Mesa e pecas renderizadas na tela.
+2. Interacao com mouse (arrastar e soltar).
+3. Rotacao e posicionamento de pecas.
+4. Regras oficiais de jogada.
+5. IA adversaria e modos multiplayer.
 
-Um jogo de dominó com interface gráfica desenvolvido em **Python** utilizando **Pygame**.
+## Requisitos
 
-O projeto permite que o jogador arraste peças de dominó com o mouse e as posicione na mesa, simulando uma partida de dominó em ambiente digital.
+- Python 3.10+
+- `pip`
+- `pygame` (quando a implementacao grafica for iniciada)
 
----
-
-## 🖼 Preview
-
-Interface gráfica com:
-
-- mesa de jogo
-- peças de dominó
-- sistema de arrastar e soltar
-- rotação das peças
-
----
-
-## 🚀 Tecnologias
-
-- Python 3
-- Pygame
-
----
-
-## 📦 Instalação
-
-Clone o repositório:
+## Como executar (estrutura atual)
 
 ```bash
-git clone https://github.com/seuusuario/domino-game-python.git
-
-Entre na pasta:
-
-cd domino-game-python
-
-Instale as dependências:
-
-pip install pygame
-▶ Executar o jogo
+git clone https://github.com/<seu-usuario>/Domino_Game.git
+cd Domino_Game
 python main.py
-🎮 Controles
-Ação	Controle
-Arrastar peça	Mouse
-Soltar peça	Soltar botão do mouse
-Rotacionar peça	Tecla R
-📂 Estrutura do projeto
-domino-game-python
-│
-├── main.py
-├── domino.py
-├── board.py
-├── assets/
-│   └── textures
-└── README.md
+```
 
-🧠 Funcionalidades
-Interface gráfica com mesa de dominó
-Peças renderizadas dinamicamente
-Arrastar e soltar peças
-Rotação de peças
-Sistema inicial de mesa
-🚧 Funcionalidades planejadas
-✔ Validação de jogadas
-✔ IA adversária
-✔ Sistema de pontuação
-✔ Multiplayer local
-✔ Multiplayer online
-✔ Animações
-✔ Sons
-✔ Interface melhorada
-📚 Objetivo do projeto
+No estado atual, o projeto funciona como base de estrutura e documentacao.
 
-Este projeto foi desenvolvido para fins de estudo em:
+## Estrutura do repositorio
 
-desenvolvimento de jogos em Python
-programação orientada a objetos
-manipulação de eventos gráficos
-design de jogos 2D
+```text
+Domino_Game/
+|-- main.py
+|-- domino.py
+|-- board.py
+`-- README.md
+```
 
-📜 Licença
+## Proximos passos recomendados
 
-Este projeto está sob a licença MIT.
+1. Implementar a modelagem das pecas de domino em `domino.py`.
+2. Criar a mesa e validacoes basicas em `board.py`.
+3. Orquestrar o loop principal e eventos em `main.py`.
 
+## Licenca
 
----
+Licenca ainda nao definida neste repositorio.
