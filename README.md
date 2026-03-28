@@ -143,7 +143,6 @@ Domino_Game/
 ├── run.py                  # Script principal para executar o jogo
 ├── requirements.txt        # Dependências do projeto
 ├── README.md              # Este arquivo
-├── CHANGELOG.md           # Histórico de versões
 ├── LICENSE                # Licença MIT
 └── .gitignore             # Arquivos ignorados pelo Git
 ```
