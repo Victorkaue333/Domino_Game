@@ -189,7 +189,7 @@ Domino_Game/
 
 ---
 
-### ✨ Fotos da Tela de Jogo
+### ✨ Fotos da Tela do Jogo
 
 <table align="center">
   <tr>
