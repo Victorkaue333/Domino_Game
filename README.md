@@ -19,7 +19,8 @@ Jogo de dominó completo com interface gráfica desenvolvido em Python com Pygam
 
 ## 🎯 Características do Jogo
 
-### Modos de Jogo
+### Modos de Jogo:
+
 - **Modo Resgate**: Compra peças do cemitério até conseguir jogar
 - **Modo Passa**: Passa a vez quando não pode jogar
 
