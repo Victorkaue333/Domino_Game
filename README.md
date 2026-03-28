@@ -1,6 +1,6 @@
 # 🎲 Domino Game (Python)
 
-Projeto em desenvolvimento de um jogo de domino com interface grafica em Python.
+Projeto em desenvolvimento de um jogo de domino com interface grafica em Python com intuito de reproduzir um dos jogos favoritos desse desenvolvedor, vulgo eu kkkk.
 
 ## 📌 Status do projeto
 
@@ -45,7 +45,6 @@ Domino_Game/
 |-- board.py
 `-- README.md
 ```
-
 
 ## 📄 Licenca
 
