@@ -120,7 +120,7 @@ Domino_Game/
     └── Implementado.md  # Documentação de implementação
 ```
 
-## ⚙️ Configurações
+## ⚙️ Configurações:
 
 Você pode personalizar diversos aspectos do jogo editando o arquivo `config.py`:
 
@@ -132,11 +132,11 @@ Você pode personalizar diversos aspectos do jogo editando o arquivo `config.py`
 - Tamanhos de janela e fontes
 - E muito mais!
 
-## 🎨 Capturas de Tela
+## 🎨 Capturas de Tela:
 
 *(Em desenvolvimento: adicionar screenshots do menu e jogo)*
 
-## 🧪 Testes
+## 🧪 Testes:
 
 O projeto inclui testes unitários abrangentes:
 
@@ -145,9 +145,9 @@ O projeto inclui testes unitários abrangentes:
 
 Execute `pytest` para rodar todos os testes.
 
-## 🛠️ Desenvolvimento
+## 🛠️ Desenvolvimento:
 
-### Estrutura do Código
+### Estrutura do Código:
 
 O código está organizado em módulos bem definidos:
 
@@ -159,7 +159,7 @@ O código está organizado em módulos bem definidos:
 
 Todos os módulos possuem docstrings completas e seguem as melhores práticas de Python.
 
-## 🤝 Contribuindo
+## 🤝 Contribuindo:
 
 Contribuições são bem-vindas! Sinta-se à vontade para:
 
