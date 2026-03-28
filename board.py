@@ -1,3 +1,5 @@
+"""Módulo principal do jogo de dominó com lógica de jogo e renderização gráfica."""
+
 from dataclasses import dataclass, field
 from enum import Enum
 import random
@@ -6,6 +8,7 @@ from typing import Optional
 import pygame
 
 from domino import HAND_TILES, MAX_PIP_VALUE, DominoTile, generate_domino_set, tile_rank
+import sounds
 
 
 WINDOW_WIDTH = 1200
@@ -31,6 +34,7 @@ BLUE = (85, 145, 230)
 
 
 class MoveSide(Enum):
+    """Representa o lado da mesa onde uma peça pode ser jogada."""
     LEFT = "left"
     RIGHT = "right"
     BOTH = "both"
@@ -38,16 +42,42 @@ class MoveSide(Enum):
 
 @dataclass
 class Player:
+    """Representa um jogador no jogo de dominó.
+    
+    Attributes:
+        name: Nome do jogador.
+        is_human: True se for jogador humano, False se for bot.
+        hand: Lista de peças na mão do jogador.
+        score: Pontuação acumulada na partida.
+    """
     name: str
     is_human: bool
     hand: list[DominoTile] = field(default_factory=list)
     score: int = 0
 
     def hand_points(self) -> int:
+        """Calcula a soma dos pontos de todas as peças na mão.
+        
+        Returns:
+            Soma total dos valores das peças.
+        """
         return sum(tile.pip_sum() for tile in self.hand)
 
 
 class DominoBoard:
+    """Gerencia a lógica do jogo e renderização gráfica.
+    
+    Esta classe controla o estado do jogo, turnos, validação de movimentos,
+    pontuação e renderização da interface gráfica.
+    
+    Attributes:
+        players: Lista de jogadores participando do jogo.
+        draw_mode: Se True, permite comprar do cemitério; se False, passa a vez.
+        boneyard: Peças ainda disponíveis no cemitério.
+        chain: Sequência de peças jogadas na mesa.
+        left_end: Valor da ponta esquerda da mesa.
+        right_end: Valor da ponta direita da mesa.
+    """
     def __init__(self, player_count: int = PLAYER_COUNT, draw_mode: bool = True) -> None:
         if player_count < 2 or player_count > 4:
             raise ValueError("player_count must be between 2 and 4")
@@ -235,10 +265,12 @@ class DominoBoard:
             drawn = self._draw_until_playable(player)
 
         if drawn > 0:
+            sounds.play_draw_tile()
             self.status_message = f"{player.name} comprou {drawn} peca(s) do cemiterio."
 
         if not self._has_playable_move(player):
             self.pass_streak += 1
+            sounds.play_pass()
             self.status_message = f"{player.name} passou a vez."
             self._end_turn_after_pass()
             return
@@ -275,6 +307,7 @@ class DominoBoard:
         moves = self._list_playable_moves(player)
         if not moves:
             self.pass_streak += 1
+            sounds.play_pass()
             self.status_message = f"{player.name} passou a vez."
             self._end_turn_after_pass()
             return
@@ -352,6 +385,7 @@ class DominoBoard:
         tile = player.hand[tile_index]
         valid_sides = self._playable_sides(tile, len(player.hand))
         if side not in valid_sides:
+            sounds.play_error()
             side_name = "esquerda" if side == MoveSide.LEFT else "direita"
             self.status_message = (
                 f"Jogada invalida: a peca {tile.left}/{tile.right} nao encaixa na {side_name}."
@@ -362,6 +396,7 @@ class DominoBoard:
         self.pass_streak = 0
 
         if side == MoveSide.BOTH:
+            sounds.play_win()
             points = self._win_points(tile, MoveSide.BOTH)
             self._finish_round(
                 winner_index=player_index,
@@ -370,9 +405,11 @@ class DominoBoard:
             )
             return
 
+        sounds.play_place_tile()
         self._place_chain_tile(tile, side)
 
         if not player.hand:
+            sounds.play_win()
             points = self._win_points(tile, side)
             reason = f"batida com {tile.left}/{tile.right}"
             self._finish_round(winner_index=player_index, points=points, reason=reason)
