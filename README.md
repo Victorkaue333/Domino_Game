@@ -6,7 +6,7 @@ Jogo de dominó completo com interface gráfica desenvolvido em Python com Pygam
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-## ✨ Características
+## ✨ Características:
 
 - 🎮 **Menu principal interativo** com navegação intuitiva
 - 🤖 **Inteligência artificial** para oponentes bots
@@ -17,7 +17,7 @@ Jogo de dominó completo com interface gráfica desenvolvido em Python com Pygam
 - 🧪 **Testes unitários** incluídos
 - 📖 **Código bem documentado** com docstrings completas
 
-## 📌 Status do Projeto
+## 📌 Status do Projeto:
 
 ✅ **Totalmente funcional e jogável!**
 
