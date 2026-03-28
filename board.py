@@ -2,7 +2,7 @@ from typing import Optional
 
 import pygame
 
-from domino import DominoTile, TILE_HEIGHT, TILE_WIDTH, generate_domino_set
+from domino import DominoTile, generate_domino_set
 
 
 WINDOW_WIDTH = 1200
