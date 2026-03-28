@@ -189,7 +189,7 @@ Domino_Game/
 
 ---
 
-### ✨ Grid de Miniaturas
+### ✨ Fotos da Tela de Jogo
 
 <table align="center">
   <tr>
