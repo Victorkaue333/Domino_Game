@@ -17,18 +17,6 @@ Jogo de dominó completo com interface gráfica desenvolvido em Python com Pygam
 - 🧪 **Testes unitários** incluídos
 - 📖 **Código bem documentado** com docstrings completas
 
-## 📌 Status do Projeto:
-
-✅ **Totalmente funcional e jogável!**
-
-- ✅ Menu principal com navegação
-- ✅ Tela de regras integrada
-- ✅ Tela de configurações
-- ✅ Sistema de sons completo
-- ✅ Jogo completo com 4 jogadores (1 humano + 3 bots)
-- ✅ Todas as regras oficiais implementadas
-- ✅ Sistema de pontuação funcional
-
 ## 🎯 Características do Jogo
 
 ### Modos de Jogo
