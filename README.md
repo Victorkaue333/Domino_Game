@@ -40,7 +40,9 @@ As regras seguem o manual oficial da Table Games:
   - Jogo fechado: 1 ponto
 - Meta de 10 pontos para vencer a partida
 
-## 🎮 Controles
+## 🎮 Controles:
+
+No que diz respeito aos controles, o jogo é projetado para ser jogado principalmente com o mouse, mas também inclui atalhos de teclado para facilitar a jogabilidade:
 
 ### Menu
 - **Mouse**: Navegar e clicar nos botões
