@@ -4,8 +4,8 @@ Gerencia o fluxo entre menu e jogo.
 """
 
 import pygame
-from menu import show_menu
-from board import run_game
+from src.menu import show_menu
+from src.board import run_game
 
 
 def main() -> None:

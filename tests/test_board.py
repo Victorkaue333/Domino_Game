@@ -3,8 +3,8 @@ Testes unitários para o módulo board.py
 """
 
 import unittest
-from board import Player, MoveSide
-from domino import DominoTile
+from src.board import Player, MoveSide
+from src.domino import DominoTile
 
 
 class TestPlayer(unittest.TestCase):

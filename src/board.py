@@ -7,8 +7,8 @@ from typing import Optional
 
 import pygame
 
-from domino import HAND_TILES, MAX_PIP_VALUE, DominoTile, generate_domino_set, tile_rank
-import sounds
+from src.domino import HAND_TILES, MAX_PIP_VALUE, DominoTile, generate_domino_set, tile_rank
+import src.sounds as sounds
 
 
 WINDOW_WIDTH = 1200

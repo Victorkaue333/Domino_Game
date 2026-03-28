@@ -5,6 +5,23 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.2.0] - 2026-03-28
+
+### Alterado
+- 📁 **Reorganização completa do projeto em estrutura modular**
+  - Código fonte movido para pasta `src/`
+  - Testes movidos para pasta `tests/`
+  - Documentação movida para pasta `docs/`
+- 🚀 Criado script `run.py` na raiz para facilitar execução
+- 📦 Estrutura profissional seguindo boas práticas Python
+- 📖 README atualizado com nova estrutura
+- 🔧 Imports atualizados para refletir nova organização
+
+### Melhorado
+- Melhor separação de responsabilidades
+- Facilita manutenção e expansão futura
+- Estrutura mais profissional e escalável
+
 ## [1.1.0] - 2026-03-28
 
 ### Adicionado

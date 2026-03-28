@@ -7,7 +7,7 @@ import sys
 from typing import Optional
 
 # Importa configurações
-from config import (
+from src.config import (
     WINDOW_WIDTH,
     WINDOW_HEIGHT,
     WINDOW_TITLE,

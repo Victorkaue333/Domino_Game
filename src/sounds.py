@@ -7,7 +7,7 @@ import pygame
 import numpy as np
 from typing import Optional
 
-from config import ENABLE_SOUND, SOUND_VOLUME
+from src.config import ENABLE_SOUND, SOUND_VOLUME
 
 
 class SoundManager:

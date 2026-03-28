@@ -3,7 +3,7 @@ Testes unitários para o módulo domino.py
 """
 
 import unittest
-from domino import DominoTile, generate_domino_set, tile_rank, MAX_PIP_VALUE
+from src.domino import DominoTile, generate_domino_set, tile_rank, MAX_PIP_VALUE
 
 
 class TestDominoTile(unittest.TestCase):

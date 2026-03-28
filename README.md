@@ -83,7 +83,10 @@ cd Domino_Game
 pip install -r requirements.txt
 
 # Execute o jogo
-python main.py
+python run.py
+
+# Ou diretamente:
+python -m src.main
 ```
 
 ### Executar Testes
@@ -93,32 +96,42 @@ python main.py
 pytest
 
 # Rodar com cobertura
-pytest --cov=. --cov-report=html
+pytest --cov=src --cov-report=html
 
 # Rodar testes específicos
-python -m unittest test_domino.py
-python -m unittest test_board.py
+python -m pytest tests/test_domino.py
+python -m pytest tests/test_board.py
 ```
 
 ## 🗂️ Estrutura do Projeto:
 
-A estrutura do projeto é organizada para facilitar a manutenção e extensão futura:
+O projeto está organizado em uma estrutura modular e profissional:
 
 ```text
 Domino_Game/
-├── main.py              # Ponto de entrada do jogo
-├── menu.py              # Menu principal e telas auxiliares
-├── board.py             # Lógica principal do jogo e renderização
-├── domino.py            # Classe de peças e geração do conjunto
-├── sounds.py            # Sistema de geração de sons
-├── config.py            # Configurações do jogo
-├── test_domino.py       # Testes unitários para domino.py
-├── test_board.py        # Testes unitários para board.py
-├── requirements.txt     # Dependências do projeto
-├── README.md            # Este arquivo
-├── LICENSE              # Licença MIT
-└── Doc/
-    └── Implementado.md  # Documentação de implementação
+├── src/                    # Código fonte principal
+│   ├── __init__.py
+│   ├── main.py            # Lógica principal do fluxo do jogo
+│   ├── menu.py            # Menu principal e telas auxiliares
+│   ├── board.py           # Lógica do jogo e renderização
+│   ├── domino.py          # Classe de peças e geração do conjunto
+│   ├── sounds.py          # Sistema de geração de sons
+│   └── config.py          # Configurações centralizadas
+│
+├── tests/                  # Testes unitários
+│   ├── __init__.py
+│   ├── test_domino.py     # Testes para domino.py
+│   └── test_board.py      # Testes para board.py
+│
+├── docs/                   # Documentação
+│   └── Implementado.md    # Documentação de implementação
+│
+├── run.py                  # Script principal para executar o jogo
+├── requirements.txt        # Dependências do projeto
+├── README.md              # Este arquivo
+├── CHANGELOG.md           # Histórico de versões
+├── LICENSE                # Licença MIT
+└── .gitignore             # Arquivos ignorados pelo Git
 ```
 
 ## ⚙️ Configurações:
@@ -139,26 +152,37 @@ Você pode personalizar diversos aspectos do jogo editando o arquivo `config.py`
 
 ## 🧪 Testes:
 
-O projeto inclui testes unitários abrangentes:
+O projeto inclui testes unitários abrangentes organizados na pasta `tests/`:
 
 - **test_domino.py**: Testa a lógica das peças (criação, encaixe, classificação)
 - **test_board.py**: Testa jogadores, movimentos e lógica de jogo
 
-Execute `pytest` para rodar todos os testes.
+Execute `pytest` na raiz do projeto para rodar todos os testes.
 
 ## 🛠️ Desenvolvimento:
 
 ### Estrutura do Código:
 
-O código está organizado em módulos bem definidos:
+O código está organizado em módulos bem definidos dentro da pasta `src/`:
 
-- **domino.py**: Classes e funções para peças de dominó
-- **board.py**: Lógica do jogo, turnos e renderização
-- **menu.py**: Interface de menus
-- **sounds.py**: Geração procedural de sons
-- **config.py**: Configurações centralizadas
+- **src/domino.py**: Classes e funções para peças de dominó
+- **src/board.py**: Lógica do jogo, turnos e renderização visual
+- **src/menu.py**: Interface de menus e navegação
+- **src/sounds.py**: Geração procedural de sons
+- **src/config.py**: Configurações centralizadas
+- **src/main.py**: Fluxo principal entre menu e jogo
 
 Todos os módulos possuem docstrings completas e seguem as melhores práticas de Python.
+
+### Como Contribuir:
+
+A estrutura modular facilita a adição de novas funcionalidades:
+
+1. **Novos recursos de jogo**: Edite `board.py` ou `domino.py`
+2. **Novos sons**: Adicione funções em `sounds.py`
+3. **Novas configurações**: Adicione constantes em `config.py`
+4. **Novos testes**: Crie arquivos em `tests/`
+5. **Nova documentação**: Adicione em `docs/`
 
 ## 📝 Melhorias Futuras
 
