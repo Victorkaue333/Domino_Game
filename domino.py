@@ -1,146 +1,156 @@
-import pygame
 import random
+from typing import Optional
+
+import pygame
+
 
 pygame.init()
 
-WIDTH = 1200
-HEIGHT = 700
+WINDOW_WIDTH = 1200
+WINDOW_HEIGHT = 700
 
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Dominó")
+TABLE_HEIGHT = 450
+HAND_START_X = 200
+HAND_Y = 550
+HAND_SPACING = 90
+HAND_SIZE = 7
 
-WHITE = (255,255,255)
-BLACK = (0,0,0)
-GREEN = (40,120,40)
+TILE_WIDTH = 60
+TILE_HEIGHT = 120
 
-TILE_W = 60
-TILE_H = 120
+WINDOW_TITLE = "Domino"
+
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+GREEN = (40, 120, 40)
+DARK_GREEN = (30, 90, 30)
+
+DOT_FONT = pygame.font.SysFont(None, 32)
 
 
 class Domino:
-
-    def __init__(self, a, b, x, y):
-        self.a = a
-        self.b = b
-        self.rect = pygame.Rect(x, y, TILE_W, TILE_H)
+    def __init__(self, left: int, right: int, x: int, y: int) -> None:
+        self.left = left
+        self.right = right
+        self.rect = pygame.Rect(x, y, TILE_WIDTH, TILE_HEIGHT)
         self.dragging = False
-        self.rotation = 0
 
-    def rotate(self):
-        self.a, self.b = self.b, self.a
+    def rotate(self) -> None:
+        self.left, self.right = self.right, self.left
 
-    def draw(self, screen):
+    def draw(self, surface: pygame.Surface) -> None:
+        pygame.draw.rect(surface, WHITE, self.rect)
+        pygame.draw.rect(surface, BLACK, self.rect, 2)
 
-        pygame.draw.rect(screen, WHITE, self.rect)
-        pygame.draw.rect(screen, BLACK, self.rect, 2)
+        top_text = DOT_FONT.render(str(self.left), True, BLACK)
+        bottom_text = DOT_FONT.render(str(self.right), True, BLACK)
 
-        font = pygame.font.SysFont(None, 32)
-
-        t1 = font.render(str(self.a), True, BLACK)
-        t2 = font.render(str(self.b), True, BLACK)
-
-        screen.blit(t1,(self.rect.x+22,self.rect.y+20))
-        screen.blit(t2,(self.rect.x+22,self.rect.y+70))
+        surface.blit(top_text, (self.rect.x + 22, self.rect.y + 20))
+        surface.blit(bottom_text, (self.rect.x + 22, self.rect.y + 70))
 
         pygame.draw.line(
-            screen,
+            surface,
             BLACK,
-            (self.rect.x,self.rect.y+TILE_H/2),
-            (self.rect.x+TILE_W,self.rect.y+TILE_H/2),
-            2
+            (self.rect.x, self.rect.y + TILE_HEIGHT // 2),
+            (self.rect.x + TILE_WIDTH, self.rect.y + TILE_HEIGHT // 2),
+            2,
         )
 
 
-def gerar_domino():
+def generate_domino_set() -> list[tuple[int, int]]:
+    tiles = []
 
-    pecas = []
+    for left in range(7):
+        for right in range(left, 7):
+            tiles.append((left, right))
 
-    for i in range(7):
-        for j in range(i,7):
-            pecas.append((i,j))
-
-    random.shuffle(pecas)
-
-    return pecas
+    random.shuffle(tiles)
+    return tiles
 
 
-def criar_mao(pecas):
+def create_hand(tiles: list[tuple[int, int]]) -> list[Domino]:
+    hand: list[Domino] = []
 
-    mao = []
+    for i in range(HAND_SIZE):
+        left, right = tiles.pop()
+        x = HAND_START_X + i * HAND_SPACING
+        hand.append(Domino(left, right, x, HAND_Y))
 
-    for i in range(7):
-
-        a,b = pecas.pop()
-
-        x = 200 + i*90
-        y = 550
-
-        mao.append(Domino(a,b,x,y))
-
-    return mao
+    return hand
 
 
-pecas = gerar_domino()
+def handle_mouse_down(
+    event: pygame.event.Event, hand: list[Domino]
+) -> Optional[Domino]:
+    for tile in hand:
+        if tile.rect.collidepoint(event.pos):
+            tile.dragging = True
+            return tile
+    return None
 
-mao = criar_mao(pecas)
 
-mesa = []
+def handle_mouse_up(
+    selected: Optional[Domino], hand: list[Domino], table: list[Domino]
+) -> Optional[Domino]:
+    if not selected:
+        return None
 
-selected = None
+    selected.dragging = False
 
-running = True
+    if selected.rect.y < TABLE_HEIGHT:
+        table.append(selected)
+        hand.remove(selected)
 
-while running:
+    return None
 
-    screen.fill(GREEN)
 
-    pygame.draw.rect(screen,(30,90,30),(0,0,WIDTH,450))
+def handle_mouse_motion(event: pygame.event.Event, selected: Optional[Domino]) -> None:
+    if selected and selected.dragging:
+        selected.rect.x = event.pos[0] - TILE_WIDTH // 2
+        selected.rect.y = event.pos[1] - TILE_HEIGHT // 2
 
-    for event in pygame.event.get():
 
-        if event.type == pygame.QUIT:
-            running = False
+def draw_scene(surface: pygame.Surface, hand: list[Domino], table: list[Domino]) -> None:
+    surface.fill(GREEN)
+    pygame.draw.rect(surface, DARK_GREEN, (0, 0, WINDOW_WIDTH, TABLE_HEIGHT))
 
-        if event.type == pygame.KEYDOWN:
+    for tile in table:
+        tile.draw(surface)
 
-            if event.key == pygame.K_r and selected:
+    for tile in hand:
+        tile.draw(surface)
+
+
+def run_game() -> None:
+    screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+    pygame.display.set_caption(WINDOW_TITLE)
+
+    tiles = generate_domino_set()
+    hand = create_hand(tiles)
+    table: list[Domino] = []
+
+    selected: Optional[Domino] = None
+    running = True
+
+    while running:
+        draw_scene(screen, hand, table)
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_r and selected:
                 selected.rotate()
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                selected = handle_mouse_down(event, hand) or selected
+            elif event.type == pygame.MOUSEBUTTONUP:
+                selected = handle_mouse_up(selected, hand, table)
+            elif event.type == pygame.MOUSEMOTION:
+                handle_mouse_motion(event, selected)
 
-        if event.type == pygame.MOUSEBUTTONDOWN:
+        pygame.display.update()
 
-            for p in mao:
+    pygame.quit()
 
-                if p.rect.collidepoint(event.pos):
 
-                    selected = p
-                    p.dragging = True
-
-        if event.type == pygame.MOUSEBUTTONUP:
-
-            if selected:
-
-                selected.dragging = False
-
-                if selected.rect.y < 450:
-
-                    mesa.append(selected)
-                    mao.remove(selected)
-
-                selected = None
-
-        if event.type == pygame.MOUSEMOTION:
-
-            if selected and selected.dragging:
-
-                selected.rect.x = event.pos[0] - TILE_W/2
-                selected.rect.y = event.pos[1] - TILE_H/2
-
-    for p in mesa:
-        p.draw(screen)
-
-    for p in mao:
-        p.draw(screen)
-
-    pygame.display.update()
-
-pygame.quit()
+if __name__ == "__main__":
+    run_game()
