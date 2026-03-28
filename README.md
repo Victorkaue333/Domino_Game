@@ -159,16 +159,6 @@ O código está organizado em módulos bem definidos:
 
 Todos os módulos possuem docstrings completas e seguem as melhores práticas de Python.
 
-## 🤝 Contribuindo:
-
-Contribuições são bem-vindas! Sinta-se à vontade para:
-
-1. Fazer fork do projeto
-2. Criar uma branch para sua feature (`git checkout -b feature/NovaFeature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona NovaFeature'`)
-4. Push para a branch (`git push origin feature/NovaFeature`)
-5. Abrir um Pull Request
-
 ## 📝 Melhorias Futuras
 
 - [ ] Animações suaves ao jogar peças
