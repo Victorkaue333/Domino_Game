@@ -24,7 +24,8 @@ Jogo de dominó completo com interface gráfica desenvolvido em Python com Pygam
 - **Modo Resgate**: Compra peças do cemitério até conseguir jogar
 - **Modo Passa**: Passa a vez quando não pode jogar
 
-### Regras Implementadas
+### Regras Implementadas:
+
 - Partida com até 4 jogadores (1 humano + bots)
 - Distribuição de 6 peças por jogador
 - Início por duplo-6 ou maior peça
