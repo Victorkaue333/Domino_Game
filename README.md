@@ -26,6 +26,8 @@ Jogo de dominó completo com interface gráfica desenvolvido em Python com Pygam
 
 ### Regras Implementadas:
 
+As regras seguem o manual oficial da Table Games:
+
 - Partida com até 4 jogadores (1 humano + bots)
 - Distribuição de 6 peças por jogador
 - Início por duplo-6 ou maior peça
