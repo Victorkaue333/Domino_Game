@@ -69,9 +69,9 @@ Após a instalação das dependências, é necessário ter o Python 3.10 ou supe
   - numpy 1.26.4
   - pytest 8.0.0 (para testes)
 
-## 🚀 Como Executar
+## 🚀 Como Executar:
 
-### Instalação
+### Instalação:
 
 ```bash
 # Clone o repositório
